@@ -11,13 +11,14 @@ const routes = [
     {
         path: '/dashboard',
         name: 'Dashboard',
-        component: () => import('../pages/dashboard..vue')
+        component: () => import('../pages/dashboard.vue')
     },
     {
         path: '/login',
         name: 'Login',
         component: Login
-    }
+    },
+
 
 ];
 

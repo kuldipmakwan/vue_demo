@@ -1,11 +1,11 @@
 <template>
     <header class="bg-white">
-      <nav class="mx-auto flex max-w-7xl items-center justify-between p-0 lg:px-8" aria-label="Global">
+      <nav class="mx-auto flex max-w-7xl items-center justify-between p-6 lg:px-8" aria-label="Global">
         <div class="flex lg:flex-1">
-          <router-link to="/" href="#" class="-m-1.5 p-1.5">
+          <a href="#" class="-m-1.5 p-1.5">
             <span class="sr-only">Your Company</span>
-            <img class="h-16 w-auto" src="https://parthlocal.s3.ap-south-1.amazonaws.com/rawMaterialItem/ae52dfa7-2a53-4121-a5d0-08ae27879076.png" alt="" />
-          </router-link>
+            <img class="h-8 w-auto" src="https://parthlocal.s3.ap-south-1.amazonaws.com/Ciyaza+Logo.png" alt="" />
+          </a>
         </div>
         <div class="flex lg:hidden">
           <button type="button" class="-m-2.5 inline-flex items-center justify-center rounded-md p-2.5 text-gray-700" @click="mobileMenuOpen = true">
@@ -13,23 +13,16 @@
             <Bars3Icon class="h-6 w-6" aria-hidden="true" />
           </button>
         </div>
-        <PopoverGroup class="hidden lg:flex lg:gap-x-12">
-          <Popover class="relative">
-            <PopoverButton class="flex items-center gap-x-1 text-sm font-semibold leading-6 text-gray-900">
-              Product
-              <!-- <ChevronDownIcon class="h-5 w-5 flex-none text-gray-400" aria-hidden="true" /> -->
-            </PopoverButton>
-          </Popover>
-  
-          <router-link to="/feature" href="#" class="text-sm font-semibold leading-6 text-gray-900">Features</router-link>
-          <a href="#" class="text-sm font-semibold leading-6 text-gray-900">Marketplace</a>
-          <a href="#" class="text-sm font-semibold leading-6 text-gray-900">Company</a>
-        </PopoverGroup>
-        <!-- <router-link to="/dashboard"> -->
-            <router-link to="/dashboard" class="hidden lg:flex lg:flex-1 lg:justify-end">
-              <a href="#" class="text-sm font-semibold leading-6 text-gray-900">Go to dashboard<span aria-hidden="true">&rarr;</span></a>
+        <PopoverGroup v-for="(item,index) in config.list" :key="index" class="hidden lg:flex lg:gap-x-12">
+          <Popover v-for="items in item.routerLinks" :key="items" class="relative">
+            <router-link :to="items.href" :class="items.class">
+              {{ items.title }}
             </router-link>
-        <!-- </router-link> -->
+          </Popover>
+        </PopoverGroup>
+        <div class="hidden lg:flex lg:flex-1 lg:justify-end">
+          <a href="#" class="text-sm font-semibold leading-6 text-gray-900">Log in <span aria-hidden="true">&rarr;</span></a>
+        </div>
       </nav>
       <Dialog class="lg:hidden" @close="mobileMenuOpen = false" :open="mobileMenuOpen">
         <div class="fixed inset-0 z-10" />
@@ -37,7 +30,7 @@
           <div class="flex items-center justify-between">
             <a href="#" class="-m-1.5 p-1.5">
               <span class="sr-only">Your Company</span>
-              <img class="h-8 w-auto" src="https://parthlocal.s3.ap-south-1.amazonaws.com/Ciyaza+Logo.png" alt="" />
+              <img class="h-8 w-auto" src="https://tailwindui.com/plus/img/logos/mark.svg?color=indigo&shade=600" alt="" />
             </a>
             <button type="button" class="-m-2.5 rounded-md p-2.5 text-gray-700" @click="mobileMenuOpen = false">
               <span class="sr-only">Close menu</span>
@@ -94,6 +87,9 @@
   } from '@heroicons/vue/24/outline'
   import { ChevronDownIcon, PhoneIcon, PlayCircleIcon } from '@heroicons/vue/20/solid'
   
+  const props = defineProps({
+    config:Object
+});
   const products = [
     { name: 'Analytics', description: 'Get a better understanding of your traffic', href: '#', icon: ChartPieIcon },
     { name: 'Engagement', description: 'Speak directly to your customers', href: '#', icon: CursorArrowRaysIcon },

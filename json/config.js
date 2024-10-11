@@ -1,4 +1,4 @@
-const datas = [
+ const  allWidgets = 
     {
         "home": {
           "path": "/",
@@ -44,7 +44,7 @@ const datas = [
                 ]
               }
             },
-            "UserList": {
+            "MyDataGrid": {
               "component": "MyDataGrid",
               "place": "main",
               "class": "",
@@ -638,7 +638,7 @@ const datas = [
                 ]
               }
             },
-            "Filter": {
+            "MyDataGridFilter": {
               "component": "MyDataGridFilter",
               "place": "main",
               "config": {
@@ -659,81 +659,6 @@ const datas = [
                     "class": "bg-white py-2 px-4 border border-gray-300 rounded-md shadow-sm text-sm font-medium text-gray-700 hover:bg-gray-50 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500"
                   }
                 ]
-              }
-            },
-            "Grid": {
-              "component": "MyDataGrid",
-              "place": "main",
-              "class": "",
-              "config": {
-                "request": {
-                  "url": "/api/master/orderType/index",
-                  "store": "orderType"
-                },
-                "columns": [
-                  {
-                    "label": "Sr.No",
-                    "class": "py-3.5 pl-4 pr-3 text-left text-sm font-semibold text-gray-900 sm:pl-6",
-                    "tdClass": "px-3 py-4 text-sm text-gray-500",
-                    "format": "serialNumber"
-                  },
-                  {
-                    "label": "Name",
-                    "class": "py-3.5 pl-4 pr-3 text-left text-sm font-semibold text-gray-900 sm:pl-6",
-                    "tdClass": "w-full max-w-0 py-4 pl-4 pr-3 text-sm font-medium text-gray-900 sm:w-auto sm:max-w-none sm:pl-6",
-                    "name": "name"
-                  },
-                  {
-                    "label": "Type",
-                    "class": "py-3.5 pl-4 pr-3 text-left text-sm font-semibold text-gray-900 sm:pl-6",
-                    "tdClass": "w-full max-w-0 py-4 pl-4 pr-3 text-sm font-medium text-gray-900 sm:w-auto sm:max-w-none sm:pl-6",
-                    "name": "type"
-                  },
-                  {
-                    "label": "Action",
-                    "class": "py-3.5 pl-4 pr-3 text-left text-sm font-semibold text-gray-900 sm:pl-6",
-                    "tdClass": "px-3 py-4 text-sm text-gray-500",
-                    "format": "action",
-                    "links": [
-                      {
-                        "route": "OrderTypeEdit",
-                        "label": "edit",
-                        "class": "text-indigo-600 hover:text-indigo-900"
-                      },
-                      {
-                        "route": "destroy",
-                        "label": "Delete",
-                        "class": "text-indigo-600 hover:text-indigo-900"
-                      }
-                    ]
-                  }
-                ]
-              }
-            },
-            "Pagination": {
-              "component": "MyPagination",
-              "place": "main",
-              "config": {
-                "class": "px-4 sm:px-6 lg:px-8",
-                "store": "orderType"
-              }
-            },
-            "DeleteModel": {
-              "component": "DeleteModel",
-              "place": "main",
-              "config": {
-                "class": "px-4 sm:px-6 lg:px-8",
-                "store": "orderType",
-                "popup": {
-                  "title": "Delete Record",
-                  "message": "Are you sure you want to delete? This data\n                      will be permanently removed from our servers forever. This action cannot be undone.",
-                  "deleteButtonTitle": "Delete",
-                  "cancelButtonTitle": "Cancel"
-                },
-                "request": {
-                  "deleteUrl": "/api/master/orderType/destroy/{id}",
-                  "gridUrl": "/api/master/orderType/index"
-                }
               }
             }
           }
@@ -2318,6 +2243,6 @@ const datas = [
           }
         }
       }
-]
 
-export default datas
+
+export default allWidgets

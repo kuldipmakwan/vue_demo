@@ -9,8 +9,8 @@
         <!-- {{ component }} -->
         <component :is="component.comp" :config="component.config" />
         <!-- {{ console.log(component) }} -->
-        <Main v-if="component === 'MyDataGrid' "  :config="component.config" /> 
       </div>
+      <!-- <Main v-if="component === 'MyDataGrid' " :config="component.config" /> -->
     </template>
     <Footer class="absolute bottom-0 w-full" />
   </div>
@@ -19,7 +19,7 @@
 <script setup>
 import { useRoute } from "vue-router";
 import allWidgets from "../../json/config";
-import Footer from '../components/Footer.vue'
+import Footer from '../components/Footer.vue';
 
           
 import { ref, defineAsyncComponent, onBeforeMount } from 'vue';
@@ -35,10 +35,12 @@ onBeforeMount(async () => {
       currentRoute = allWidgets[name]
     }
   }
+  
   for (const comp in currentRoute.widgets) {
-    widgets.value[currentRoute.widgets[comp]['place']] = currentRoute.widgets[comp]
+    widgets.value[currentRoute.widgets[comp]['place']] = currentRoute.widgets[comp];
     widgets.value[currentRoute.widgets[comp]['place']]['comp'] = await loadDynamicData(comp)
   }
+  console.log(currentRoute.widgets,'Paginations')
 
 });
 async function loadDynamicData(component) {
@@ -46,6 +48,6 @@ async function loadDynamicData(component) {
   let loadingComponent = component;
   console.log(dynamicModules[`./${loadingComponent}.vue`]);
 
-  return defineAsyncComponent(dynamicModules[`./${loadingComponent}.vue`])
+  return defineAsyncComponent(dynamicModules[`./${loadingComponent}.vue`]);
 }
 </script>

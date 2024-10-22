@@ -10,11 +10,11 @@
   },
   "dependencies": {
     "@formkit/vue": "^1.6.5",
-    "@headlessui/vue": "^1.7.22",
+    "@headlessui/vue": "^1.7.23",
     "@heroicons/vue": "^2.1.5",
     "axios": "^1.7.7",
     "css": "^3.0.0",
-    "sweetalert2": "^11.13.2",
+    "sweetalert2": "^11.14.4",
     "swiper": "^11.1.14",
     "tailwind": "^4.0.0",
     "vue": "^3.5.10",

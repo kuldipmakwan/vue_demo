@@ -12,12 +12,20 @@
                 <option value="DE">Germany</option>
             </select>
         </form>
-
+        <div class="flex justify-center my-5">
+            <router-link :to="config.buttons[0].href">
+                <button class="bg-indigo-500 text-white font-medium text-base p-2 rounded-md"><a :href="config.buttons[0].href">{{ config.buttons[0].title }}</a></button>
+            </router-link>
+        </div>
     </div>
 </template>
 <script setup>
 const props = defineProps({
     config: Object
 });
-console.log(props.config, 'main components')
+
+const orderType = props.config.buttons.map((order) => {
+    return order
+})
+console.log(orderType.value, '4444');
 </script>

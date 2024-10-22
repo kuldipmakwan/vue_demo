@@ -13,11 +13,10 @@ function addDynamicRoutes(config) {
 
     Object.values(config).forEach((route) => {
       const dynamicRoute = {
-
         path: route.path,
         name: route.name,
         component: () => import(`../components/MasterLayout.vue`),
-        meta: route.meta || {},
+        meta: route.meta,
       };
 
       router.addRoute(dynamicRoute);
@@ -29,7 +28,11 @@ addDynamicRoutes(allWidgets);
 
 
 router.beforeEach((to, from, next) => {
-  document.title = to.meta.title || "Default Title";
+  if(to.meta.shouldRefresh){
+    window.location.reload(); 
+  }else{
+    document.title = to.meta.title || "Default Title";
+  }
   next();
 });
 

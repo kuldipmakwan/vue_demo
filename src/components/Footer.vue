@@ -1,5 +1,5 @@
 <template>
-    <footer class="font-sans tracking-wide bg-black px-8 py-12">
+    <footer class="font-sans tracking-wide bg-black px-8 py-3 md:absolute md:bottom-0 md:w-full">
       <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-x-6 gap-y-10">
         <div>
           <a href="#"><img style="filter: invert();" src="https://parthlocal.s3.ap-south-1.amazonaws.com/rawMaterialItem/ae52dfa7-2a53-4121-a5d0-08ae27879076.png"  alt="logo" class='w-44 fill-slate-50' /></a>
@@ -66,12 +66,12 @@
             <li>
               <a href='javascript:void(0)' class='hover:text-white text-gray-300 text-sm'>Support</a>
             </li>
-            <li>
+            <!-- <li>
               <a href='javascript:void(0)' class='hover:text-white text-gray-300 text-sm'>Client Portal</a>
             </li>
             <li>
               <a href='javascript:void(0)' class='hover:text-white text-gray-300 text-sm'>Resources</a>
-            </li>
+            </li> -->
           </ul>
         </div>
 
@@ -91,12 +91,12 @@
             <li>
               <a href='javascript:void(0)' class='hover:text-white text-gray-300 text-sm'>Integration Services</a>
             </li>
-            <li>
+            <!-- <li>
               <a href='javascript:void(0)' class='hover:text-white text-gray-300 text-sm'>Marketing Glossar</a>
             </li>
             <li>
               <a href='javascript:void(0)' class='hover:text-white text-gray-300 text-sm'>UIPath</a>
-            </li>
+            </li> -->
           </ul>
         </div>
 
@@ -120,12 +120,12 @@
             <li>
               <a href='javascript:void(0)' class='hover:text-white text-gray-300 text-sm'>Blog</a>
             </li>
-            <li>
+            <!-- <li>
               <a href='javascript:void(0)' class='hover:text-white text-gray-300 text-sm'>Portfolio</a>
             </li>
             <li>
               <a href='javascript:void(0)' class='hover:text-white text-gray-300 text-sm'>Events</a>
-            </li>
+            </li> -->
           </ul>
         </div>
 
@@ -149,18 +149,17 @@
             <li>
               <a href='javascript:void(0)' class='hover:text-white text-gray-300 text-sm'>Sitemap</a>
             </li>
-            <li>
+            <!-- <li>
               <a href='javascript:void(0)' class='hover:text-white text-gray-300 text-sm'>Contact</a>
             </li>
             <li>
               <a href='javascript:void(0)' class='hover:text-white text-gray-300 text-sm'>News</a>
-            </li>
+            </li> -->
           </ul>
         </div>
       </div>
 
-      <hr class="my-10 border-gray-400" />
-
+      <hr class="my-2 border-gray-400" />
       <div class="flex flex-wrap max-md:flex-col gap-4">
         <ul class="md:flex md:space-x-6 max-md:space-y-2">
           <li>

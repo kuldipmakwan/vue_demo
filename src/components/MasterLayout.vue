@@ -1,18 +1,17 @@
 <template>
   <div>
     <template v-for="(component, index) in widgets" :key="index">
-      <div v-if="component.place == 'top'">
+      <div v-if="component.place == 'top' || 'main'">
         <component :is="component.comp" :config="component.config" />
         {{ console.log(component) }}
       </div>
-      <div v-else-if="component.place == 'main'">
+      <!-- <div v-else-if="component.place == 'main'"> -->
         <!-- {{ component }} -->
-        <component :is="component.comp" :config="component.config" />
+        <!-- <component :is="component.comp" :config="component.config" /> -->
         <!-- {{ console.log(component) }} -->
-      </div>
-      <!-- <Main v-if="component === 'MyDataGrid' " :config="component.config" /> -->
+      <!-- </div> -->
     </template>
-    <Footer class="absolute bottom-0 w-full" />
+    <Footer />
   </div>
 </template>
 
